@@ -54,7 +54,7 @@ student-registration/
 ## 🧑‍💻 Author
 
 Aayan Hashmi  
-[Your GitHub Profile](https://github.com/yourusername)
+[Your GitHub Profile](https://github.com/AayanHashmi)
 
 ---
 
