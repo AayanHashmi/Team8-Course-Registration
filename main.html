@@ -21,7 +21,6 @@ body {
         padding: 30px 15px;
 }
 
-<<<<<<< HEAD
 .container {
           background: white;
           border-radius: 12px;
@@ -123,3 +122,55 @@ label {
 
 <label>Gender</label>
 <div class="gender-group">
+<label><input type="radio" name="gender" value="Male" required /> Male</label>
+<label><input type="radio" name="gender" value="Female" /> Female</label>
+<label><input type="radio" name="gender" value="Other" /> Other</label>
+</div>
+
+<label for="password">Password</label>
+<input type="password" id="password" required />
+
+<button type="submit"><nav>
+
+<a href="selector.html">Login</a>
+</nav>
+r</button>
+</form>
+
+<div class="result" id="resultBox" style="display: none;"></div>
+</div>
+
+<script>
+	const form = document.getElementById('registrationForm');
+	const resultBox = document.getElementById('resultBox');
+
+	form.addEventListener('submit', function (e) {
+		e.preventDefault();
+
+		const name = document.getElementById('name').value;
+		const email = document.getElementById('email').value;
+		const phone = document.getElementById('phone').value;
+		const gender = document.querySelector('input[name="gender"]:checked').value;
+		const password = document.getElementById('password').value;
+
+		const subjects = Array.from(document.querySelectorAll('input[name="subject"]:checked'))
+			.map((subj) => subj.value);
+
+		if (subjects.length === 0) {
+			alert('Please select at least one subject.');
+			return;
+		}
+
+		resultBox.style.display = 'block';
+		resultBox.innerHTML = `
+			<strong>Registration Successful!</strong><br>
+			Name: ${name}<br>
+			Email: ${email}<br>
+			Phone: ${phone}<br>
+			Gender: ${gender}<br>
+			Subjects: ${subjects.join(', ')}
+		`;
+	});
+</script>
+</body>
+</html>
