@@ -51,3 +51,25 @@ r</button>
 		const phone = document.getElementById('phone').value;
 		const gender = document.querySelector('input[name="gender"]:checked').value;
 		const password = document.getElementById('password').value;
+
+		const subjects = Array.from(document.querySelectorAll('input[name="subject"]:checked'))
+			.map((subj) => subj.value);
+
+		if (subjects.length === 0) {
+			alert('Please select at least one subject.');
+			return;
+		}
+
+		resultBox.style.display = 'block';
+		resultBox.innerHTML = `
+			<strong>Registration Successful!</strong><br>
+			Name: ${name}<br>
+			Email: ${email}<br>
+			Phone: ${phone}<br>
+			Gender: ${gender}<br>
+			Subjects: ${subjects.join(', ')}
+		`;
+	});
+</script>
+</body>
+</html>
