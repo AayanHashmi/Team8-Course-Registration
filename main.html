@@ -38,3 +38,16 @@ r</button>
 
 <div class="result" id="resultBox" style="display: none;"></div>
 </div>
+
+<script>
+	const form = document.getElementById('registrationForm');
+	const resultBox = document.getElementById('resultBox');
+
+	form.addEventListener('submit', function (e) {
+		e.preventDefault();
+
+		const name = document.getElementById('name').value;
+		const email = document.getElementById('email').value;
+		const phone = document.getElementById('phone').value;
+		const gender = document.querySelector('input[name="gender"]:checked').value;
+		const password = document.getElementById('password').value;
